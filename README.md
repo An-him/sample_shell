@@ -12,3 +12,6 @@ But This day I created the header that I utilize through the project
 
 Fork();
 	Creates an alternate process executes and returns to the parent process and also executes it
+	Fork's return value dictates where the process is being executed.
+	If pid is 0 then it's within the child process
+	else is in the calling process(Parent process)
