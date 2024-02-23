@@ -12,7 +12,10 @@ char *lineptr;
 size_t nread;
 printf("$ ");
 
-nread = getline(&lineptr, &n, stdin);
+while (nread = getline(&lineptr, &n, stdin) != EOF)
+{
 printf("%s", lineptr);
+printf("$ ");
+}
 return (0);
 }
