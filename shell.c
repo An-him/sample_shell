@@ -1,21 +1,22 @@
 #include "shell.h"
 /**
-*main - for the shell function
-*@ac: argument count
-*@av: array of commands
+*main - main program for my shell
 *Return: int
 **/
-int main(int ac, char *av[])
+int main(void)
 {
-size_t n;
-char *lineptr;
-size_t nread;
-printf("$ ");
-
-while (nread = getline(&lineptr, &n, stdin) != EOF)
+char *cmd = NULL;
+while (1)
 {
-printf("%s", lineptr);
-printf("$ ");
+cmd = promptandparse();
+if (cmd == NULL)
+{
+free(cmd);
+break;
+}
+shellexit(cmd);
+printf("%s\n", cmd);
+free(cmd);
 }
 return (0);
 }
