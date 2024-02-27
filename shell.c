@@ -5,7 +5,11 @@
 **/
 int main(void)
 {
+pid_t pid;
+char *argv[] = {"bin/ls",NULL};
 char *cmd = NULL;
+int status;
+argv[0] = cmd;
 while (1)
 {
 cmd = promptandparse();
@@ -15,7 +19,6 @@ free(cmd);
 break;
 }
 shellexit(cmd);
-printf("%s\n", cmd);
 free(cmd);
 }
 return (0);
