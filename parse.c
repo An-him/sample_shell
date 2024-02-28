@@ -6,6 +6,10 @@
 **/
 char *parse(char *input)
 {
+if (input == NULL)
+{
+return (NULL);
+}
 input[strcspn(input, "\n")] = '\0';
 return (input);
 }
